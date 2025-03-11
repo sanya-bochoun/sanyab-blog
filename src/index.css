@@ -1,7 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
+  /* Base Colors */
+  --brown-600: #2b2b16;
+  --brown-500: #434036;
+  --brown-400: #757168;
+  --brown-300: #a5a5a1;
+  --brown-200: #efeeeb;
+  --brown-100: #f9f8f8;
+  --white: #ffffff;
+
+  /* Brand Colors */
+  --orange: #f7a76c;
+  --green: #17b978;
+  --mint-green: #c7efd9;
+  --red: #fb5d64;
+
   /* Font Family */
   --font-main: "Poppins", "Noto Sans Thai", sans-serif;
 
@@ -21,6 +39,22 @@
   --btn-text: #000000;
   --btn-border: #d9d9d9;
   --btn-text-light: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F9F8F8] font-poppins;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 text-sm;
+  }
+  
+  .btn-secondary {
+    @apply text-gray-600 hover:text-gray-900 px-4 py-2 text-sm;
+  }
 }
 
 /* Typography Classes */
@@ -144,25 +178,45 @@
 }
 
 /* Mobile Responsive Styles */
+@media screen and (max-width: 1440px) {
+  nav > div {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media screen and (max-width: 375px) {
+  body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav > div {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .btn {
     height: 40px;
     padding: 10px 24px;
     font-size: 0.875rem;
   }
-  
+
   .btn-lg {
     height: 48px;
     padding: 12px 32px;
     font-size: 1rem;
   }
-  
+
   .btn-sm {
     height: 32px;
     padding: 6px 16px;
     font-size: 0.75rem;
   }
-  
+
   /* Full width button option for mobile */
   .btn-mobile-full {
     width: 100%;
@@ -170,9 +224,10 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   /* Adjust padding for smaller screens */
-  .btn-icon-left, .btn-icon-right {
+  .btn-icon-left,
+  .btn-icon-right {
     padding-left: 20px;
     padding-right: 20px;
   }
