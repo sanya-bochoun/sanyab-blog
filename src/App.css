@@ -1,13 +1,26 @@
 @import "tailwindcss";
 
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #F9F8F8;
+  font-family: 'Poppins', 'Noto Sans Thai', sans-serif;
+  position: relative;
+}
+
+.content-container {
+  width: 100%;
+  position: relative;
+  /* กำหนดขนาดและ layout ของเนื้อหาภายใน */
+}
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -41,4 +54,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
